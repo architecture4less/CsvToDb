@@ -8,5 +8,33 @@
     <artifactId>me.jwotoole9141.csv2db</artifactId>
     <version>1.0-INITIAL</version>
 
-    
+    <build>
+        <!-- https://stackoverflow.com/a/27037879/6571937 -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>12</source>
+                    <target>12</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <!-- http://opencsv.sourceforge.net/#how_can_i_use_it_in_my_maven_projects -->
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.0</version>
+        </dependency>
+        <dependency>
+            <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+    </dependencies>
 </project>
