@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="me.jwotoole9141.csv2db" />
         <module name="CsvToDb" />
       </profile>
     </annotationProcessing>
