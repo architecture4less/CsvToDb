@@ -18,13 +18,6 @@ import java.util.stream.IntStream;
  */
 public class IterOne {
 
-    private static BufferedReader getResourceReader(Path path) throws FileNotFoundException {
-
-        InputStream stream = IterOne.class.getClassLoader().getResourceAsStream(path.toString());
-        if (stream == null) throw new FileNotFoundException(path.toString());
-        return new BufferedReader(new InputStreamReader(stream));
-    }
-
     /**
      * Parses a CSV file and prints its contents to the console.
      *
@@ -41,7 +34,7 @@ public class IterOne {
         Path csvFile = Paths.get("SEOExample.csv");
         System.out.printf("Displaying the CSV contents of '%s'...\n", csvFile);
 
-        try (CSVReader reader = new CSVReader(getResourceReader(csvFile))) {
+        try (CSVReader reader = new CSVReader(Utils.getResourceReader(csvFile))) {
 
             // parse the raw data...
             List<String[]> rawData = reader.readAll();
