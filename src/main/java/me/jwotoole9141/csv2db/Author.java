@@ -14,7 +14,7 @@ import java.sql.SQLException;
 /**
  * A representation of a book's author for the bookstore.
  */
-public class BookAuthor {
+public class Author {
 
     /* fields match naming convention of json-serialized
      * authors in order to be parsed with gson */
@@ -76,11 +76,11 @@ public class BookAuthor {
      * @throws JsonIOException       the file could not be read
      * @throws JsonSyntaxException   the file contained invalid JSON
      */
-    public static BookAuthor[] parseAuthors(Path jsonFile)
+    public static Author[] parseAuthors(Path jsonFile)
             throws FileNotFoundException, JsonIOException, JsonSyntaxException {
 
         Gson gson = new Gson();
         JsonReader jsonReader = new JsonReader(Utils.getResourceReader(jsonFile));
-        return gson.fromJson(jsonReader, BookAuthor[].class);
+        return gson.fromJson(jsonReader, Author[].class);
     }
 }

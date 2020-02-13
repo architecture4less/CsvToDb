@@ -56,7 +56,7 @@ public class IterTwo {
             // read authors from the json file and insert them to the database
 
             try {
-                for (BookAuthor author : BookAuthor.parseAuthors(jsonAuthors)) {
+                for (Author author : Author.parseAuthors(jsonAuthors)) {
                     author.insertToDb(conn);
                 }
                 System.out.println("Inserted JSON authors to the bookstore database.");
