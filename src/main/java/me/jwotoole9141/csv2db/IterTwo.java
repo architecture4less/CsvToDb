@@ -30,7 +30,7 @@ public class IterTwo {
         Path csvReport = Paths.get("bookstore_report2.csv");
         Path jsonAuthors = Paths.get("authors.json");
 
-        try (Connection conn = DriverManager.getConnection(bookstoreDb.toString())) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + bookstoreDb.toString())) {
 
             // read books from the csv file and insert them to the database
 
