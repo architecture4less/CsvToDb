@@ -80,6 +80,7 @@ public class Book {
 
         CSVReader reader = new CSVReader(Utils.getResourceReader(csvFile));
         return reader.readAll().stream()
+                .skip(1)
                 .map(csvRow -> new Book(csvRow[0], csvRow[1], csvRow[2]))
                 .toArray(Book[]::new);
     }
