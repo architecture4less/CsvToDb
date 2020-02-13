@@ -59,6 +59,7 @@ public class IterTwo {
                 for (BookAuthor author : BookAuthor.parseAuthors(jsonAuthors)) {
                     author.insertToDb(conn);
                 }
+                System.out.println("Inserted JSON authors to the bookstore database.");
             }
             catch (FileNotFoundException ex) {
                 System.out.printf("The file '%s' could not found%n", jsonAuthors);
