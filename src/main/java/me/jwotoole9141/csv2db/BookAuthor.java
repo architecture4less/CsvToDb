@@ -73,8 +73,8 @@ public class BookAuthor {
      * @return an array of authors
      *
      * @throws FileNotFoundException the given path doesn't exist
-     * @throws JsonIOException the file could not be read
-     * @throws JsonSyntaxException the file contained invalid JSON
+     * @throws JsonIOException       the file could not be read
+     * @throws JsonSyntaxException   the file contained invalid JSON
      */
     public static BookAuthor[] parseAuthors(Path jsonFile)
             throws FileNotFoundException, JsonIOException, JsonSyntaxException {
