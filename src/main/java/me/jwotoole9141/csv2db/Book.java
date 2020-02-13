@@ -79,8 +79,8 @@ public class Book {
     public static Book[] parseBooksCsv(Path csvFile) throws IOException, CsvException {
 
         CSVReader reader = new CSVReader(Utils.getResourceReader(csvFile));
-        return (Book[]) reader.readAll().stream()
+        return reader.readAll().stream()
                 .map(csvRow -> new Book(csvRow[0], csvRow[1], csvRow[2]))
-                .toArray();
+                .toArray(Book[]::new);
     }
 }
