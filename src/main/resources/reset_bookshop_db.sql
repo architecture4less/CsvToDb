@@ -5,8 +5,8 @@
 DROP TABLE IF EXISTS author;
 CREATE TABLE author (
     author_name  VARCHAR PRIMARY KEY,
-    author_email VARCHAR UNIQUE,
-    author_url   VARCHAR UNIQUE
+    author_email VARCHAR /*UNIQUE*/,
+    author_url   VARCHAR /*UNIQUE*/
 );
 
 
