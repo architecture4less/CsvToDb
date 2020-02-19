@@ -36,9 +36,14 @@ public class IterTwo {
 
             try {
                 for (Book book : Book.parseBooksCsv(csvReport)) {
-                    book.insertToDb(conn);
+                    try {
+                        book.insertToDb(conn);
+                        System.out.printf("Inserted %s from CSV to the database.%n", book);
+                    }
+                    catch (SQLException ex) {
+                        System.out.printf("Couldn't add %s to the database: %s%n", book, ex.getMessage());
+                    }
                 }
-                System.out.println("Inserted CSV books to the bookstore database.");
             }
             catch (FileNotFoundException ex) {
                 System.out.printf("The file '%s' could not found%n", csvReport);
@@ -49,17 +54,19 @@ public class IterTwo {
             catch (CsvException ex) {
                 System.out.printf("The file '%s' contained invalid CSV: %s%n", csvReport, ex.getMessage());
             }
-            catch (SQLException ex) {
-                System.out.printf("Couldn't add 'book' row to the '%s' database: %s%n", bookstoreDb, ex.getMessage());
-            }
 
             // read authors from the json file and insert them to the database
 
             try {
                 for (Author author : Author.parseAuthors(jsonAuthors)) {
-                    author.insertToDb(conn);
+                    try {
+                        author.insertToDb(conn);
+                        System.out.printf("Inserted %s from JSON to the database.%n", author);
+                    }
+                    catch (SQLException ex) {
+                        System.out.printf("Couldn't add %s to the database: %s%n", author, ex.getMessage());
+                    }
                 }
-                System.out.println("Inserted JSON authors to the bookstore database.");
             }
             catch (FileNotFoundException ex) {
                 System.out.printf("The file '%s' could not found%n", jsonAuthors);
@@ -70,11 +77,7 @@ public class IterTwo {
             catch (JsonSyntaxException ex) {
                 System.out.printf("The file '%s' contained invalid JSON: %s%n", jsonAuthors, ex.getMessage());
             }
-            catch (SQLException ex) {
-                System.out.printf("Couldn't add 'author' row to the '%s' database: %s%n", bookstoreDb, ex.getMessage());
-            }
         }
-
         catch (SQLException ex) {
             System.out.printf("Couldn't connect to the '%s' database: %s%n", bookstoreDb, ex.getMessage());
         }
