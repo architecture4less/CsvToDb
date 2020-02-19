@@ -26,7 +26,7 @@ public class IterTwo {
      */
     public static void main(String[] args) {
 
-        Path bookstoreDb = Paths.get("bookstore.db");
+        Path bookstoreDb = Paths.get("BookStore.db");
         Path csvReport = Paths.get("bookstore_report2.csv");
         Path jsonAuthors = Paths.get("authors.json");
 
