@@ -15,4 +15,4 @@ course at Florida Gulf Coast University, Spring 2020
   You will need to insert into "author" from the json file (the three fields in the json file)
   And "book" with some of the information from the csv file (see bottom)
 
-![IterTwo-01](.project/IterTwo-01.png)
+![IterTwo-02](.project/IterTwo-02.png)
