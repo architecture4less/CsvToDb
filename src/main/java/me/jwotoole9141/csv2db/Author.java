@@ -47,6 +47,13 @@ public class Author {
         this.author_url = newUrl;
     }
 
+    @Override
+    public String toString() {
+        return "Author{" +
+                "author_name='" + author_name + '\'' +
+                '}';
+    }
+
     /**
      * Inserts this author into the 'author' table.
      *

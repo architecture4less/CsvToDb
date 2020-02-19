@@ -48,6 +48,13 @@ public class Book {
         this.author_name = author_name;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "isbn='" + isbn + '\'' +
+                '}';
+    }
+
     /**
      * Inserts this book into the 'book' table.
      *
